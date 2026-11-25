@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b10">
+  <title>Frameforge — AI video studio</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b0b10;--panel:#13131b;--panel2:#191922;--line:#292936;--muted:#9292a4;--text:#f4f3fa;--purple:#a98bff;--pink:#ff8fc7;--green:#9cf2c1;font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -20%,#29203d 0,transparent 42%),var(--bg);color:var(--text);min-height:100vh}button,textarea,select{font:inherit}button{cursor:pointer;color:inherit}.shell{max-width:1440px;margin:auto;padding:0 36px}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0d}.brand{display:flex;gap:11px;align-items:center;font-size:17px;font-weight:750;letter-spacing:-.4px}.brand-icon{height:32px;width:32px;border-radius:10px;background:linear-gradient(135deg,#a786ff,#ff83c5);display:grid;place-items:center;color:#15121d}.brand-icon svg{width:17px}.top-right{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:13px}.avatar{width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#f6bb91,#a385ff);display:grid;place-items:center;color:#16131c;font-weight:700}.badge{border:1px solid var(--line);border-radius:20px;padding:5px 10px;color:#c5bbeb}.hero{padding:42px 0 25px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.6px;color:var(--purple);font-weight:700}.hero h1{font-size:clamp(28px,4vw,40px);line-height:1.14;letter-spacing:-1.6px;margin:9px 0 8px}.hero p{margin:0;color:var(--muted);font-size:15px}.workspace{display:grid;grid-template-columns:minmax(320px, .82fr) minmax(450px,1.35fr);gap:20px;align-items:stretch;padding-bottom:42px}.card{background:linear-gradient(155deg,#15151e,#111118);border:1px solid var(--line);border-radius:16px;overflow:hidden}.form-card{padding:22px;display:flex;flex-direction:column;min-height:510px}.section-title{font-size:14px;font-weight:700;margin:0 0 20px;display:flex;align-items:center;gap:8px}.section-title span{width:23px;height:23px;border:1px solid #393348;background:#211d2b;color:var(--purple);border-radius:7px;display:grid;place-items:center;font-size:12px}.field-label{font-size:12px;font-weight:650;margin-bottom:9px;display:flex;justify-content:space-between}.hint{font-weight:400;color:var(--muted)}textarea{width:100%;height:145px;resize:vertical;min-height:110px;background:#0d0d13;border:1px solid #30303b;border-radius:10px;padding:13px 14px;color:var(--text);outline:none;line-height:1.55}textarea:focus,select:focus{border-color:#9071e6;box-shadow:0 0 0 3px #a98bff17}textarea::placeholder{color:#696979}.examples{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 22px}.chip{background:#1b1b25;border:1px solid #30303a;border-radius:20px;padding:6px 10px;font-size:11px;color:#c0bfca;transition:.15s}.chip:hover{border-color:#8771bc;color:#e4d8ff}.settings{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2px 0 22px}.setting label{display:block;color:#b9b8c5;font-size:11px;margin:0 0 7px}.setting select{width:100%;background:#0d0d13;border:1px solid #30303b;border-radius:8px;padding:9px 10px;color:#e9e7f1;outline:none;font-size:12px}.generate{border:0;border-radius:10px;background:linear-gradient(100deg,#a58aff,#cf83e7);color:#17111f;font-weight:750;padding:12px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 6px 22px #a98bff20;transition:filter .15s,transform .15s}.generate:hover{filter:brightness(1.09);transform:translateY(-1px)}.generate:disabled{opacity:.7;cursor:wait}.generate svg{width:16px}.fineprint{text-align:center;color:#777686;font-size:10px;margin:10px 0 0}.preview-card{display:flex;flex-direction:column;min-height:510px}.preview-head{height:56px;padding:0 18px;border-bottom:1px solid #ffffff0d;display:flex;align-items:center;justify-content:space-between}.preview-head strong{font-size:13px}.live{display:flex;align-items:center;gap:7px;color:#a8a7b3;font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:#83e5af;box-shadow:0 0 10px #83e5af7a}.stage{flex:1;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at center,#1c1a28,#101016 75%)}.canvas-wrap{position:relative;width:min(100%,640px);aspect-ratio:16/9;border-radius:9px;overflow:hidden;background:#171523;box-shadow:0 15px 50px #0008}.canvas-wrap canvas{width:100%;height:100%;display:block}.canvas-label{position:absolute;left:15px;bottom:13px;font-size:10px;color:#ffffffa8;background:#08081088;border:1px solid #ffffff24;border-radius:20px;padding:4px 8px;backdrop-filter:blur(8px)}.placeholder{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}.placeholder .play{height:48px;width:48px;margin:0 auto 12px;border:1px solid #ffffff30;background:#ffffff0b;border-radius:50%;display:grid;place-items:center;color:#d9caff}.placeholder svg{width:19px;margin-left:2px}.placeholder strong{font-size:13px}.placeholder span{font-size:11px;color:#9a98a8;margin-top:3px}.preview-foot{padding:15px 18px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff0d;min-height:66px}.video-meta{display:flex;gap:8px;align-items:center;color:#c4c2cf;font-size:11px}.video-meta small{color:#777686}.actions{display:flex;gap:8px}.action{font-size:11px;padding:8px 11px;background:#1a1a23;border:1px solid #32323d;border-radius:8px;color:#c9c7d2}.action:disabled{opacity:.4;cursor:not-allowed}.action.download{background:#e8dfff;border-color:#e8dfff;color:#1c1524;font-weight:700}.status{display:none;margin:0 18px 13px;border-radius:8px;padding:9px 11px;font-size:11px;background:#1c1b27;color:#c4b8e4}.status.show{display:block}.status.error{background:#321c25;color:#ffb8c5}.footer{border-top:1px solid #ffffff0d;color:#666574;font-size:11px;padding:17px 0 24px;display:flex;justify-content:space-between}.footer a{color:#a18ccf;text-decoration:none}
+    @media(max-width:850px){.shell{padding:0 20px}.workspace{grid-template-columns:1fr}.form-card{min-height:unset}.preview-card{min-height:430px}.hero{padding-top:30px}}
+    @media(max-width:520px){.shell{padding:0 14px}.topbar{height:62px}.top-right .badge{display:none}.hero{padding:27px 0 20px}.form-card{padding:17px}.preview-card{min-height:320px}.preview-head{padding:0 13px}.preview-foot{padding:12px;gap:8px;align-items:flex-start;flex-direction:column}.actions{width:100%}.action{flex:1}.footer{font-size:10px;gap:12px}.workspace{gap:13px}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><div class="brand"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 4.8c0-1.1 1.2-1.8 2.2-1.2l13 7.2a1.4 1.4 0 0 1 0 2.4l-13 7.2A1.5 1.5 0 0 1 5 19.2z"/></svg></div>Frameforge</div><div class="top-right"><span class="badge">Studio preview</span><span>Made for creators</span><div class="avatar">F</div></div></header>
+    <main>
+      <section class="hero"><div class="eyebrow">Your ideas, in motion</div><h1>Make a video from a prompt.</h1><p>Describe a scene. Frameforge turns it into a short animated video you can download.</p></section>
+      <section class="workspace" aria-label="Video generation studio">
+        <div class="card form-card"><h2 class="section-title"><span>✦</span> Create your video</h2>
+          <label class="field-label" for="prompt">Describe your video <span class="hint" id="counter">0 / 300</span></label>
+          <textarea id="prompt" maxlength="300" placeholder="A tiny cabin under a starry sky, northern lights flowing across the mountains…" aria-describedby="prompt-help"></textarea>
+          <div class="examples" id="prompt-help"><button class="chip" type="button" data-prompt="A dreamy sunset over a calm ocean, soft waves and glowing clouds">🌅 Sunset ocean</button><button class="chip" type="button" data-prompt="A neon-lit city street at night in the rain, cinematic and atmospheric">🌃 Neon city</button><button class="chip" type="button" data-prompt="A magical forest with fireflies drifting between ancient trees">🌲 Enchanted forest</button></div>
+          <div class="settings"><div class="setting"><label for="duration">Duration</label><select id="duration"><option value="5">5 seconds</option><option value="8" selected>8 seconds</option><option value="12">12 seconds</option></select></div><div class="setting"><label for="ratio">Aspect ratio</label><select id="ratio"><option value="landscape" selected>Landscape · 16:9</option><option value="portrait">Portrait · 9:16</option><option value="square">Square · 1:1</option></select></div></div>
+          <button class="generate" id="generate"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 1.8 7.1L21 11l-7.2 1.9L12 20l-1.8-7.1L3 11l7.2-1.9L12 2Zm7 13 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></svg><span>Generate video</span></button>
+          <p class="fineprint">Creates a locally rendered animated video · no account needed</p>
+        </div>
+        <div class="card preview-card"><div class="preview-head"><strong>Preview</strong><div class="live"><span class="dot"></span><span id="preview-state">Ready to create</span></div></div>
+          <div class="stage"><div class="canvas-wrap" id="canvas-wrap"><canvas id="scene" width="960" height="540" aria-label="Animated video preview"></canvas><div class="placeholder" id="placeholder"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.8c0-.8.9-1.3 1.6-.9l9.1 5.2a1 1 0 0 1 0 1.8l-9.1 5.2a1 1 0 0 1-1.6-.9z"/></svg></div><strong>Your video will appear here</strong><span>Write a prompt to get started</span></div><span class="canvas-label" id="canvas-label">FRAMEFORGE · PREVIEW</span></div></div>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+          <div class="preview-foot"><div class="video-meta"><span id="video-title">No video generated</span><small id="video-detail"></small></div><div class="actions"><button class="action" id="replay" disabled>↻ &nbsp;Replay</button><button class="action download" id="download" disabled>↓ &nbsp;Download video</button></div></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>Frameforge Studio · Browser-rendered video prototype</span><span>AI video generation can be connected through a provider API.</span></footer>
+  </div>
+<script>
+(() => {
+  const canvas = document.getElementById('scene'), ctx = canvas.getContext('2d');
+  const prompt = document.getElementById('prompt'), durationSelect = document.getElementById('duration'), ratioSelect = document.getElementById('ratio');
+  const generateBtn = document.getElementById('generate'), placeholder = document.getElementById('placeholder'), status = document.getElementById('status');
+  const W = canvas.width, H = canvas.height;
+  let animationId = 0, recording = false, videoUrl = '', sceneStart = 0, scenePrompt = '', sceneDuration = 8, sceneRatio = 'landscape';
+  const palettes = [ ['#f69d67','#a24e69','#241f47'], ['#60c9d6','#4172a7','#24264c'], ['#f6b55e','#bd6684','#3e355e'], ['#6bd4a2','#376e71','#242e4d'], ['#ee7eaf','#7959ae','#20234c'] ];
+  let particles = [];
+  const hash = s => { let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return Math.abs(h); };
+  function setupParticles(seed){ let x=seed||1; const rnd=()=>{x=(x*1664525+1013904223)>>>0;return x/4294967296}; particles=Array.from({length:95},()=>({x:rnd()*W,y:rnd()*H*.78,r:1+rnd()*2.6,s:.5+rnd()*1.8,p:rnd()*Math.PI*2})); }
+  function draw(t){
+    const elapsed=(t-sceneStart)/1000, p=palettes[hash(scenePrompt)%palettes.length], ratio=sceneRatio;
+    const grad=ctx.createLinearGradient(0,0,W,H); grad.addColorStop(0,p[0]);grad.addColorStop(.48,p[1]);grad.addColorStop(1,p[2]);ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+    // Atmospheric glow and moving light ribbons
+    for(let i=0;i<5;i++){const x=W*(.12+i*.22)+Math.sin(elapsed*.35+i*1.7)*W*.08,y=H*(.2+(i%3)*.13)+Math.cos(elapsed*.28+i)*H*.08;const g=ctx.createRadialGradient(x,y,0,x,y,W*.32);g.addColorStop(0,'rgba(255,235,216,.18)');g.addColorStop(1,'rgba(255,235,216,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H)}
+    ctx.save();ctx.globalCompositeOperation='screen';ctx.lineWidth=44;ctx.lineCap='round';for(let j=0;j<3;j++){ctx.beginPath();for(let x=0;x<=W;x+=12){const y=H*(.29+j*.105)+Math.sin(x*.006+elapsed*.45+j*2)*28+Math.sin(x*.013-elapsed*.27+j)*13;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.strokeStyle=`rgba(255,226,210,${.075-j*.012})`;ctx.stroke()}ctx.restore();
+    // Distant horizon and layered rolling landscape
+    const horizon=H*.65;const hill=(base,amp,freq,phase,color)=>{ctx.beginPath();ctx.moveTo(0,H);for(let x=0;x<=W;x+=8){let y=base+Math.sin(x*freq+phase)*amp+Math.sin(x*freq*2.1-phase)*amp*.3;ctx.lineTo(x,y)}ctx.lineTo(W,H);ctx.closePath();ctx.fillStyle=color;ctx.fill()};
+    hill(horizon,28,.006,elapsed*.12,'#27243f');hill(horizon+28,40,.008,elapsed*.16,'#1d1d34');hill(horizon+60,25,.012,-elapsed*.09,'#141521');
+    const glow=ctx.createRadialGradient(W*.5,horizon,0,W*.5,horizon,W*.6);glow.addColorStop(0,'rgba(255,203,160,.17)');glow.addColorStop(1,'rgba(255,203,160,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
+    for(const a of particles){const tw=.35+.65*(.5+.5*Math.sin(elapsed*a.s+a.p));ctx.beginPath();ctx.arc(a.x+Math.sin(elapsed*.15+a.p)*5,a.y,a.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,246,225,${tw*.7})`;ctx.fill()}
+    // Soft cinematic vignette
+    const vig=ctx.createRadialGradient(W/2,H/2,H*.18,W/2,H/2,H*.83);vig.addColorStop(0,'rgba(0,0,0,0)');vig.addColorStop(1,'rgba(5,5,15,.53)');ctx.fillStyle=vig;ctx.fillRect(0,0,W,H);
+    const lines=wrapText(scenePrompt.toUpperCase(),36);ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='600 25px system-ui, sans-serif';ctx.fillStyle='rgba(255,255,255,.92)';ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=14;const total=lines.length*34;lines.forEach((line,i)=>ctx.fillText(line,W/2,H*.79-total/2+i*34, W*.84));ctx.shadowBlur=0;
+    ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='600 11px system-ui,sans-serif';ctx.letterSpacing='3px';ctx.fillText('A FRAMEFORGE FILM',W/2,H*.94);ctx.letterSpacing='0px';
+    if(recording && elapsed>=sceneDuration){stopRecording();return}
+    animationId=requestAnimationFrame(draw);
+  }
+  function wrapText(text,max){const words=text.split(/\s+/),lines=[];let line='';for(const word of words){if((line+' '+word).trim().length>max&&line){lines.push(line);line=word}else line=(line+' '+word).trim()}if(line)lines.push(line);return lines.slice(0,2)}
+  function setRatio(value){sceneRatio=value;canvasWrapRatio();}
+  function canvasWrapRatio(){const wrap=document.getElementById('canvas-wrap');wrap.style.aspectRatio=sceneRatio==='portrait'?'9 / 16':sceneRatio==='square'?'1 / 1':'16 / 9';if(sceneRatio==='portrait'){wrap.style.maxWidth='320px'}else{wrap.style.maxWidth='640px'}}
+  function showStatus(text,isError=false){status.textContent=text;status.className='status show'+(isError?' error':'')}
+  function hideStatus(){status.className='status'}
+  function startPreview(){cancelAnimationFrame(animationId);sceneStart=performance.now();setupParticles(hash(scenePrompt));placeholder.style.display='none';animationId=requestAnimationFrame(draw)}
+  function stopRecording(){if(!recording)return;recording=false;generateBtn.disabled=false;generateBtn.querySelector('span').textContent='Generate video';document.getElementById('preview-state').textContent='Video ready';document.getElementById('replay').disabled=false;if(window._recorder&&window._recorder.state!=='inactive')window._recorder.stop()}
+  async function generate(){
+    const text=prompt.value.trim();if(!text){prompt.focus();showStatus('Add a prompt first, or choose one of the examples.',true);return}
+    if(!canvas.captureStream||!window.MediaRecorder){showStatus('Video export needs a recent Chrome, Edge, or Firefox browser.',true);return}
+    hideStatus();scenePrompt=text;sceneDuration=Number(durationSelect.value);setRatio(ratioSelect.value);startPreview();
+    const stream=canvas.captureStream(30);let mime='video/webm;codecs=vp9';if(!MediaRecorder.isTypeSupported(mime))mime='video/webm;codecs=vp8';if(!MediaRecorder.isTypeSupported(mime))mime='video/webm';
+    let recorder;try{recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:4500000})}catch(e){showStatus('This browser could not start video recording. Try the latest Chrome or Firefox.',true);stream.getTracks().forEach(x=>x.stop());return}
+    const chunks=[];recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onerror=()=>{recording=false;generateBtn.disabled=false;generateBtn.querySelector('span').textContent='Generate video';showStatus('The browser stopped recording unexpectedly. Please try again.',true)};
+    recorder.onstop=()=>{stream.getTracks().forEach(x=>x.stop());if(!chunks.length){showStatus('No video data was captured. Please try again.',true);return}if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl=URL.createObjectURL(new Blob(chunks,{type:mime}));document.getElementById('download').disabled=false;document.getElementById('video-title').textContent=text.length>32?text.slice(0,32)+'…':text;document.getElementById('video-detail').textContent=`· ${sceneDuration}s · ${mime.includes('webm')?'WebM':''}`;document.getElementById('canvas-label').textContent='FRAMEFORGE · GENERATED';showStatus('Your video is ready. Download it or replay the animation.');};
+    window._recorder=recorder;recording=true;generateBtn.disabled=true;generateBtn.querySelector('span').textContent='Rendering video…';document.getElementById('preview-state').textContent='Rendering';recorder.start(250);
+  }
+  prompt.addEventListener('input',()=>{document.getElementById('counter').textContent=`${prompt.value.length} / 300`;hideStatus()});
+  document.querySelectorAll('.chip').forEach(button=>button.addEventListener('click',()=>{prompt.value=button.dataset.prompt;prompt.dispatchEvent(new Event('input'));prompt.focus()}));
+  ratioSelect.addEventListener('change',()=>{if(scenePrompt&&!recording){setRatio(ratioSelect.value);startPreview()}});
+  generateBtn.addEventListener('click',generate);
+  document.getElementById('replay').addEventListener('click',()=>{if(scenePrompt){setRatio(ratioSelect.value);startPreview();document.getElementById('preview-state').textContent='Preview playing';hideStatus()}});
+  document.getElementById('download').addEventListener('click',()=>{if(!videoUrl)return;const a=document.createElement('a');a.href=videoUrl;a.download='frameforge-video.webm';a.click()});
+  setupParticles(7);draw(0);
+})();
+</script>
+</body>
+</html>
