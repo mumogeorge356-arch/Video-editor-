@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b10">
+  <meta name="description" content="View in-progress and completed tasks in Frameforge.">
+  <title>Frameforge — Tasks</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Frameforge home"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4.8c0-1.1 1.2-1.8 2.2-1.2l13 7.2a1.4 1.4 0 0 1 0 2.4l-13 7.2A1.5 1.5 0 0 1 5 19.2z"/></svg></span><span>Frameforge</span></a>
+      <nav class="page-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="tasks.html" aria-current="page">Tasks</a><a href="editor.html">Edit Video</a></nav>
+      <a class="new-task-link" href="index.html">＋ New task</a>
+    </header>
+    <main class="tasks-main">
+      <section class="tasks-intro"><div class="eyebrow">Your workspace</div><h1>Tasks</h1><p>Only active and completed items appear here. Sign in from Home to sync task details; attached files remain on the device where they were added.</p><p class="help-note" id="cloud-sync-status" role="status" aria-live="polite"></p></section>
+      <div class="task-columns">
+        <section class="task-section" aria-labelledby="in-progress-heading">
+          <div class="task-section-heading"><h2 id="in-progress-heading">In progress</h2><span class="count-pill" id="in-progress-count">0</span></div>
+          <div class="task-list" id="in-progress-list" aria-live="polite"></div>
+        </section>
+        <section class="task-section completed-section" aria-labelledby="completed-heading">
+          <div class="task-section-heading"><h2 id="completed-heading">Done</h2><span class="count-pill" id="completed-count">0</span></div>
+          <div class="task-list" id="completed-list" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer"><span>Frameforge · Personal task workspace</span><a href="index.html">Home</a></footer>
+  </div>
+  <script type="module" src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
