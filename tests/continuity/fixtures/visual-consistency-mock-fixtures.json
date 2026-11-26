@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "suiteId": "frameforge.visual-consistency.acceptance.v1",
+  "notice": "Synthetic metadata and canned evaluator observations for tests only. No media bytes, real people, provider calls, biometric templates, credentials, or external URLs are included.",
+  "providerMode": "mock-only",
+  "fakeProvider": {
+    "providerId": "test.mock-vision",
+    "modelId": "fixture-evaluator",
+    "modelVersion": "0.0-test",
+    "rubricVersion": "1.0-test",
+    "mustNeverContactNetwork": true
+  },
+  "baseProject": {
+    "uid": "user_demo_a",
+    "projectId": "project_rooftop_demo",
+    "schemaVersion": 2,
+    "revision": 12,
+    "characters": [
+      {
+        "schemaVersion": 1,
+        "id": "character_nia",
+        "name": "Nia",
+        "aliases": ["the rooftop gardener"],
+        "role": "protagonist",
+        "canonicalDescription": "Synthetic fictional character used only for acceptance testing.",
+        "appearance": {
+          "ageDescription": "adult",
+          "hair": "short coiled black hair",
+          "skinTone": "warm brown (fictional, user-authored test text)",
+          "build": "slender silhouette",
+          "signatureItems": ["green work jacket", "brass watering can"],
+          "distinctiveDetails": ["fictional crescent mark above left eyebrow"]
+        },
+        "mustKeep": ["short coiled black hair", "brass watering can remains with Nia unless scene transition changes it"],
+        "mayVary": ["green work jacket may be wet after the storm", "lighting and camera angle may vary"],
+        "referenceAssetIds": ["asset_ref_nia_front"],
+        "revision": 3,
+        "archived": false
+      },
+      {
+        "schemaVersion": 1,
+        "id": "character_omar",
+        "name": "Omar",
+        "aliases": [],
+        "role": "supporting character",
+        "canonicalDescription": "Synthetic fictional character, explicitly absent from the roof scenes.",
+        "appearance": {
+          "ageDescription": "adult",
+          "hair": "close-cropped dark hair",
+          "skinTone": null,
+          "build": "average silhouette",
+          "signatureItems": [],
+          "distinctiveDetails": []
+        },
+        "mustKeep": [],
+        "mayVary": [],
+        "referenceAssetIds": ["asset_ref_omar_front"],
+        "revision": 1,
+        "archived": false
+      }
+    ],
+    "assets": [
+      {
+        "id": "asset_ref_nia_front",
+        "kind": "character-reference",
+        "mediaType": "image/jpeg",
+        "sizeBytes": 1000,
+        "width": 512,
+        "height": 512,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "storageMode": "device-only",
+        "storageKey": "mock-local-ref-nia",
+        "ownerCharacterId": "character_nia",
+        "consent": {"remoteAnalysis": false, "providerId": null}
+      },
+      {
+        "id": "asset_ref_omar_front",
+        "kind": "character-reference",
+        "mediaType": "image/jpeg",
+        "sizeBytes": 1000,
+        "width": 512,
+        "height": 512,
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "storageMode": "device-only",
+        "storageKey": "mock-local-ref-omar",
+        "ownerCharacterId": "character_omar",
+        "consent": {"remoteAnalysis": false, "providerId": null}
+      },
+      {
+        "id": "asset_clip_a",
+        "kind": "video-clip",
+        "mediaType": "video/mp4",
+        "sizeBytes": 5000000,
+        "durationSeconds": 6.0,
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "storageMode": "device-only",
+        "storageKey": "mock-local-clip-a"
+      },
+      {
+        "id": "asset_clip_b",
+        "kind": "video-clip",
+        "mediaType": "video/mp4",
+        "sizeBytes": 5000000,
+        "durationSeconds": 6.0,
+        "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "storageMode": "device-only",
+        "storageKey": "mock-local-clip-b"
+      },
+      {
+        "id": "asset_clip_c",
+        "kind": "video-clip",
+        "mediaType": "video/mp4",
+        "sizeBytes": 5000000,
+        "durationSeconds": 6.0,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "storageMode": "device-only",
+        "storageKey": "mock-local-clip-c"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "scene_roof_night",
+        "order": 1,
+        "title": "After the storm",
+        "characterStates": [
+          {
+            "characterId": "character_nia",
+            "present": true,
+            "appearanceVariant": "default",
+            "costume": ["green work jacket"],
+            "startState": ["holds brass watering can"],
+            "endState": ["still holds brass watering can"],
+            "intentionalChanges": []
+          },
+          {"characterId": "character_omar", "present": false, "costume": [], "startState": [], "endState": [], "intentionalChanges": []}
+        ],
+        "props": [{"id":"watering_can","state":"held-by-nia","owner":"character_nia"}],
+        "revision": 2
+      },
+      {
+        "id": "scene_roof_after_rain",
+        "order": 2,
+        "title": "The glowing leaf",
+        "characterStates": [
+          {
+            "characterId": "character_nia",
+            "present": true,
+            "appearanceVariant": "default",
+            "costume": ["wet green work jacket"],
+            "startState": ["still holds brass watering can"],
+            "endState": ["places brass watering can beside stairwell"],
+            "intentionalChanges": ["jacket is wet after the storm", "watering can is placed beside stairwell at the end"]
+          },
+          {"characterId": "character_omar", "present": false, "costume": [], "startState": [], "endState": [], "intentionalChanges": []}
+        ],
+        "props": [{"id":"watering_can","state":"placed-beside-stairwell-at-scene-end","owner":"character_nia"}],
+        "revision": 1
+      }
+    ],
+    "clips": [
+      {
+        "id": "clip_roof_a",
+        "sceneIds": ["scene_roof_night"],
+        "sequenceOrder": 1,
+        "assetId": "asset_clip_a",
+        "expectedCharacterIds": ["character_nia"],
+        "intentionalVariationIds": [],
+        "revision": 1
+      },
+      {
+        "id": "clip_roof_b",
+        "sceneIds": ["scene_roof_after_rain"],
+        "sequenceOrder": 2,
+        "assetId": "asset_clip_b",
+        "expectedCharacterIds": ["character_nia"],
+        "intentionalVariationIds": ["jacket-wet-after-storm"],
+        "revision": 1
+      },
+      {
+        "id": "clip_roof_c",
+        "sceneIds": ["scene_roof_after_rain"],
+        "sequenceOrder": 3,
+        "assetId": "asset_clip_c",
+        "expectedCharacterIds": [],
+        "intentionalVariationIds": [],
+        "revision": 1
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "caseId": "VIS-001",
+      "title": "Baseline consistent character across clips",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockObservations": [
+        {"clipId":"clip_roof_a","characterId":"character_nia","timeSeconds":1.2,"attributes":{"hair":{"expected":"short coiled black hair","observed":"short coiled black hair","visibility":"clear"},"jacket":{"expected":"green work jacket","observed":"green work jacket","visibility":"clear"},"wateringCan":{"expected":"held by Nia","observed":"visible in Nia's hand","visibility":"clear"}}},
+        {"clipId":"clip_roof_b","characterId":"character_nia","timeSeconds":2.4,"attributes":{"hair":{"expected":"short coiled black hair","observed":"short coiled black hair","visibility":"clear"},"jacket":{"expected":"green work jacket; wet variation allowed","observed":"wet green work jacket","visibility":"clear"},"wateringCan":{"expected":"held at scene start","observed":"visible in Nia's hand","visibility":"clear"}}}
+      ],
+      "mockEvaluator": {"mode":"return-observations","findings":[{"category":"visual.appearance.hair","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_a","expected":"short coiled black hair","observed":"short coiled black hair","timeSeconds":1.2,"confidence":0.94},{"category":"visual.appearance.jacket","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_b","expected":"wet green jacket is allowed","observed":"wet green work jacket","timeSeconds":2.4,"confidence":0.91}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["consistent","consistent"],"stale":false}
+    },
+    {
+      "caseId": "VIS-002",
+      "title": "Invariant hair appearance mismatch",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.hair","state":"mismatch","severity":"review","characterId":"character_nia","sceneId":"scene_roof_after_rain","clipId":"clip_roof_b","expected":"short coiled black hair","observed":"long straight blond hair","evidence":[{"assetId":"asset_clip_b","timeSeconds":3.1}],"confidence":0.91,"explanation":"The visible hair description conflicts with the selected character reference and the mustKeep field."}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["mismatch"],"mustIncludeEvidence":true,"mustNotUseIdentityVerificationLabel":true}
+    },
+    {
+      "caseId": "VIS-003",
+      "title": "Declared wet-jacket variation is accepted",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.jacket","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_b","expected":"green work jacket; wet variation allowed","observed":"wet green work jacket","evidence":[{"assetId":"asset_clip_b","timeSeconds":2.4}],"confidence":0.88}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["consistent"],"mustNotFlagDeclaredVariation":true}
+    },
+    {
+      "caseId": "VIS-004",
+      "title": "Undeclared costume change is flagged for review",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "inputMutations": [{"type":"remove-intentional-variation","id":"jacket-wet-after-storm"}],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.jacket","state":"possible-mismatch","severity":"review","characterId":"character_nia","clipId":"clip_roof_b","expected":"green work jacket","observed":"red leather coat","evidence":[{"assetId":"asset_clip_b","timeSeconds":2.4}],"confidence":0.78}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["possible-mismatch"],"projectDataAutoEdited":false}
+    },
+    {
+      "caseId": "VIS-005",
+      "title": "Occluded hair yields uncertainty",
+      "selectedClipIds": ["clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.hair","state":"uncertain","severity":"review","characterId":"character_nia","clipId":"clip_roof_b","expected":"short coiled black hair","observed":"hair mostly hidden by hood","evidence":[{"assetId":"asset_clip_b","timeSeconds":4.8}],"confidence":0.42,"explanation":"Occlusion prevents reliable visual assessment."},{"category":"visual.appearance.jacket","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_b","expected":"wet green jacket allowed","observed":"wet green jacket","evidence":[{"assetId":"asset_clip_b","timeSeconds":4.8}],"confidence":0.89}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["uncertain","consistent"],"uncertaintyPreserved":true}
+    },
+    {
+      "caseId": "VIS-006",
+      "title": "Explicitly absent character is not reported missing",
+      "selectedClipIds": ["clip_roof_c"],
+      "selectedReferenceAssetIds": ["asset_ref_omar_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_omar_front": true, "asset_clip_c": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[]},
+      "expected": {"reportStatus":"complete","providerCallCount":0,"findingStates":[],"noMissingCharacterFinding":true,"skipReason":"character-not-expected-in-clip"}
+    },
+    {
+      "caseId": "VIS-007",
+      "title": "Unexplained prop discontinuity at clip boundary",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "inputMutations": [{"type":"remove-scene-transition","sceneId":"scene_roof_after_rain","propId":"watering_can"}],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.continuity.prop_state","state":"possible-mismatch","severity":"review","characterId":"character_nia","sceneId":"scene_roof_after_rain","clipId":"clip_roof_b","expected":"brass watering can remains with Nia at scene start","observed":"watering can not visible in sampled opening frame","evidence":[{"assetId":"asset_clip_a","timeSeconds":5.7},{"assetId":"asset_clip_b","timeSeconds":0.4}],"confidence":0.71}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["possible-mismatch"],"mustLinkBothClips":true}
+    },
+    {
+      "caseId": "VIS-008",
+      "title": "Lighting and angle difference does not create an unsupported mismatch",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.hair","state":"uncertain","severity":"review","characterId":"character_nia","clipId":"clip_roof_b","expected":"short coiled black hair","observed":"dark hair visible under different colored lighting; detail insufficient","evidence":[{"assetId":"asset_clip_b","timeSeconds":1.9}],"confidence":0.48,"explanation":"Lighting and camera angle reduce attribute visibility."}]},
+      "expected": {"reportStatus":"complete","providerCallCount":1,"findingStates":["uncertain"],"unsupportedMismatch":false}
+    },
+    {
+      "caseId": "VIS-009",
+      "title": "Consent denial blocks all remote analysis",
+      "selectedClipIds": ["clip_roof_a"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": false, "providerId": null},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true},
+      "mockEvaluator": {"mode":"must-not-call","findings":[]},
+      "expected": {"reportStatus":"blocked","providerCallCount":0,"findingStates":["not-evaluated"],"networkTransferCount":0,"reason":"consent-required"}
+    },
+    {
+      "caseId": "VIS-010",
+      "title": "Missing local clip bytes block visual check",
+      "selectedClipIds": ["clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_b": false},
+      "mockEvaluator": {"mode":"must-not-call","findings":[]},
+      "expected": {"reportStatus":"blocked","providerCallCount":0,"findingStates":["not-evaluated"],"networkTransferCount":0,"reason":"asset-unavailable-on-device"}
+    },
+    {
+      "caseId": "VIS-011",
+      "title": "Changed inputs make an in-flight report stale",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "race": {"whileJobRunning": {"character_nia.revision": 4, "asset_clip_b.sha256":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}},
+      "mockEvaluator": {"mode":"return-findings","findings":[{"category":"visual.appearance.hair","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_b","expected":"short coiled black hair","observed":"short coiled black hair","evidence":[{"assetId":"asset_clip_b","timeSeconds":2.0}],"confidence":0.9}]},
+      "expected": {"reportStatus":"stale","providerCallCount":1,"stale":true,"mustNotApplyAsCurrent":true}
+    },
+    {
+      "caseId": "VIS-012",
+      "title": "Provider timeout yields truthful partial result",
+      "selectedClipIds": ["clip_roof_a", "clip_roof_b"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true, "asset_clip_b": true},
+      "mockEvaluator": {"mode":"timeout-after-partial","partialFindings":[{"category":"visual.appearance.hair","state":"consistent","severity":"info","characterId":"character_nia","clipId":"clip_roof_a","expected":"short coiled black hair","observed":"short coiled black hair","evidence":[{"assetId":"asset_clip_a","timeSeconds":1.2}],"confidence":0.89}],"errorCode":"MOCK_TIMEOUT"},
+      "expected": {"reportStatus":"partial","providerCallCount":1,"findingStates":["consistent","not-evaluated"],"missingClipId":"clip_roof_b","noFabricatedFindings":true}
+    },
+    {
+      "caseId": "VIS-013",
+      "title": "Invalid scene mapping is rejected before evaluator call",
+      "selectedClipIds": ["clip_unknown"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true},
+      "mockEvaluator": {"mode":"must-not-call","findings":[]},
+      "expected": {"reportStatus":"failed","providerCallCount":0,"reason":"invalid-project-clip-reference","safeError":true}
+    },
+    {
+      "caseId": "VIS-014",
+      "title": "Malformed evaluator output is rejected and rendered safely",
+      "selectedClipIds": ["clip_roof_a"],
+      "selectedReferenceAssetIds": ["asset_ref_nia_front"],
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "assetAvailability": {"asset_ref_nia_front": true, "asset_clip_a": true},
+      "mockEvaluator": {"mode":"return-malformed","payload":{"characterId":"user_demo_b/secret","clipId":"<script>alert(1)</script>","state":"certain-perfect-identity","explanation":"<img src=x onerror=alert(1)>"}},
+      "expected": {"reportStatus":"partial","providerCallCount":1,"findingStates":["not-evaluated"],"rawHtmlRendered":false,"invalidIdsAccepted":false,"safeError":true}
+    },
+    {
+      "caseId": "SEC-001",
+      "title": "Cross-user asset/report IDOR is denied",
+      "requestAuthUid": "user_demo_a",
+      "requestedOwnerUid": "user_demo_b",
+      "requestedResourceId": "asset_ref_nia_front",
+      "consent": {"remoteAnalysis": true, "providerId": "test.mock-vision"},
+      "mockEvaluator": {"mode":"must-not-call","findings":[]},
+      "expected": {"httpStatusClass":"deny","providerCallCount":0,"mediaReadCount":0,"bodyUidTrusted":false}
+    },
+    {
+      "caseId": "SEC-002",
+      "title": "Arbitrary URL, unsupported media, and oversized input are rejected",
+      "requests": [
+        {"assetUrl":"http://127.0.0.1/private"},
+        {"mediaType":"application/octet-stream","sizeBytes":999999999},
+        {"sampleFrameCount":9999}
+      ],
+      "mockEvaluator": {"mode":"must-not-call","findings":[]},
+      "expected": {"rejectedBeforeMediaRead":true,"providerCallCount":0,"networkFetchCount":0}
+    },
+    {
+      "caseId": "UX-002",
+      "title": "Report becomes stale after any checked input changes",
+      "createReportFrom": "VIS-001",
+      "thenMutate": {"clip_roof_a.revision": 2},
+      "expected": {"reportStatus":"stale","rerunRequiresExplicitAction":true}
+    }
+  ]
+}
